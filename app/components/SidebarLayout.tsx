@@ -14,7 +14,7 @@ export default function SidebarLayout({ children }: SidebarLayoutProps) {
   const menuItems = [
     {
       name: 'Dashboard',
-      path: '/dashboard',
+      path: '/',
       icon: (
         <svg
           className="w-5 h-5"

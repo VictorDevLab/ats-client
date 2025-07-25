@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DashBoard from "./dashboard/page";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <Link href="/users">
         <button className="btn btn-primary">Primary</button>
       </Link>
+      <DashBoard />
 
     </main>
   );
