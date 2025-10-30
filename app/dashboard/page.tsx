@@ -6,11 +6,7 @@ import { MdPeopleAlt } from "react-icons/md";
 import { IoMdClock } from "react-icons/io";
 
 
-
-
-
-
-const DashBoard = () => {
+function DashBoard() {
     return (
         <div className='p-1'>
             <div className="card w-full bg-base-100 card-md shadow-sm">
