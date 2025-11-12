@@ -16,7 +16,7 @@ type Props = {
   users: User[];
 };
 
-const CandidatesTable: React.FC<Props> = ({ users }) => {
+function CandidatesTable({ users }: Props) {
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
 
   const openDetails = (user: User) => setSelectedUser(user);
@@ -64,7 +64,9 @@ const CandidatesTable: React.FC<Props> = ({ users }) => {
                   <td>
                     {user.company}
                     <br />
-                    <span className="badge badge-ghost badge-sm">{user.jobTitle}</span>
+                    <span className="badge badge-ghost badge-sm">
+                      {user.jobTitle}
+                    </span>
                   </td>
                   <td>{user.color}</td>
                   <th>
@@ -86,14 +88,13 @@ const CandidatesTable: React.FC<Props> = ({ users }) => {
       {/* Backdrop */}
       <div
         className={`fixed inset-0 z-40 transition-opacity duration-200 ${
-          selectedUser ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          selectedUser
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
         aria-hidden={!selectedUser}
       >
-        <div
-          className="absolute inset-0 bg-black/40"
-          onClick={closeDetails}
-        />
+        <div className="absolute inset-0 bg-black/40" onClick={closeDetails} />
       </div>
 
       <aside
@@ -120,8 +121,12 @@ const CandidatesTable: React.FC<Props> = ({ users }) => {
                 </div>
                 <div>
                   <div className="text-xl font-bold">{selectedUser.name}</div>
-                  <div className="text-sm opacity-60">{selectedUser.jobTitle}</div>
-                  <div className="text-sm opacity-50">{selectedUser.company}</div>
+                  <div className="text-sm opacity-60">
+                    {selectedUser.jobTitle}
+                  </div>
+                  <div className="text-sm opacity-50">
+                    {selectedUser.company}
+                  </div>
                 </div>
               </div>
 
@@ -158,6 +163,6 @@ const CandidatesTable: React.FC<Props> = ({ users }) => {
       </aside>
     </div>
   );
-};
+}
 
 export default CandidatesTable;
